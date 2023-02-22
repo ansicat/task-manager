@@ -1,0 +1,968 @@
+[
+{
+  "model": "task_manager.position",
+  "pk": 1,
+  "fields": {
+    "name": "Manager"
+  }
+},
+{
+  "model": "task_manager.position",
+  "pk": 2,
+  "fields": {
+    "name": "Team Leader"
+  }
+},
+{
+  "model": "task_manager.position",
+  "pk": 3,
+  "fields": {
+    "name": "Developer"
+  }
+},
+{
+  "model": "task_manager.position",
+  "pk": 4,
+  "fields": {
+    "name": "Designer"
+  }
+},
+{
+  "model": "task_manager.position",
+  "pk": 5,
+  "fields": {
+    "name": "QA Engineer"
+  }
+},
+{
+  "model": "task_manager.project",
+  "pk": 1,
+  "fields": {
+    "name": "E-commerce Website",
+    "is_completed": false
+  }
+},
+{
+  "model": "task_manager.project",
+  "pk": 2,
+  "fields": {
+    "name": "Mobile App",
+    "is_completed": false
+  }
+},
+{
+  "model": "task_manager.project",
+  "pk": 3,
+  "fields": {
+    "name": "Product Catalog",
+    "is_completed": false
+  }
+},
+{
+  "model": "task_manager.project",
+  "pk": 4,
+  "fields": {
+    "name": "Marketing Campaign",
+    "is_completed": false
+  }
+},
+{
+  "model": "task_manager.project",
+  "pk": 5,
+  "fields": {
+    "name": "Internal Tools",
+    "is_completed": false
+  }
+},
+{
+  "model": "task_manager.tasktype",
+  "pk": 1,
+  "fields": {
+    "name": "Feature"
+  }
+},
+{
+  "model": "task_manager.tasktype",
+  "pk": 2,
+  "fields": {
+    "name": "Bug"
+  }
+},
+{
+  "model": "task_manager.tasktype",
+  "pk": 3,
+  "fields": {
+    "name": "Improvement"
+  }
+},
+{
+  "model": "task_manager.tasktype",
+  "pk": 4,
+  "fields": {
+    "name": "Research"
+  }
+},
+{
+  "model": "task_manager.tasktype",
+  "pk": 5,
+  "fields": {
+    "name": "Other"
+  }
+},
+{
+  "model": "task_manager.worker",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$kTNTgXS1IlVXmq0GhQgMFh$CBwp92/wGvFiMstIzty3QReuLF+wA2+Eg+A+a/Tg6W0=",
+    "last_login": "2023-02-22T20:49:08.068Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@example.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-02-22T20:48:44.088Z",
+    "position": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "task_manager.worker",
+  "pk": 2,
+  "fields": {
+    "password": "!",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "manager",
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "manager@example.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-02-21T10:00:00Z",
+    "position": 1,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "task_manager.worker",
+  "pk": 3,
+  "fields": {
+    "password": "!",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "leader",
+    "first_name": "Bob",
+    "last_name": "Smith",
+    "email": "leader@example.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-02-21T10:00:00Z",
+    "position": 2,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "task_manager.worker",
+  "pk": 4,
+  "fields": {
+    "password": "!",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "developer1",
+    "first_name": "Alice",
+    "last_name": "Johnson",
+    "email": "alice@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-02-21T10:00:00Z",
+    "position": 3,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "task_manager.worker",
+  "pk": 5,
+  "fields": {
+    "password": "!",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "developer2",
+    "first_name": "Tom",
+    "last_name": "Lee",
+    "email": "tom@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-02-21T10:00:00Z",
+    "position": 3,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "task_manager.worker",
+  "pk": 6,
+  "fields": {
+    "password": "!",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "designer",
+    "first_name": "Sarah",
+    "last_name": "Brown",
+    "email": "sarah@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-02-21T10:00:00Z",
+    "position": 4,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "task_manager.worker",
+  "pk": 7,
+  "fields": {
+    "password": "!",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "qa1",
+    "first_name": "Mike",
+    "last_name": "Wu",
+    "email": "mike@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-02-21T10:00:00Z",
+    "position": 5,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "task_manager.worker",
+  "pk": 8,
+  "fields": {
+    "password": "!",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "qa2",
+    "first_name": "Linda",
+    "last_name": "Chen",
+    "email": "linda@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-02-21T10:00:00Z",
+    "position": 5,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 1,
+  "fields": {
+    "name": "Deploy new API",
+    "description": "Deploy the new API to production environment",
+    "deadline": "2023-02-28",
+    "is_completed": false,
+    "priority": 2,
+    "task_type": 1,
+    "project": 4,
+    "assignees": [
+      3,
+      7,
+      6
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 2,
+  "fields": {
+    "name": "Fix bugs in login page",
+    "description": "Fix all the reported bugs in the login page",
+    "deadline": "2023-03-01",
+    "is_completed": false,
+    "priority": 3,
+    "task_type": 1,
+    "project": 4,
+    "assignees": [
+      3,
+      2,
+      8,
+      7
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 3,
+  "fields": {
+    "name": "Create user dashboard",
+    "description": "Create a dashboard for users to see their account information",
+    "deadline": "2023-03-10",
+    "is_completed": false,
+    "priority": 3,
+    "task_type": 1,
+    "project": 4,
+    "assignees": [
+      3,
+      2,
+      8,
+      5
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 4,
+  "fields": {
+    "name": "Add search functionality",
+    "description": "Add search functionality to the website",
+    "deadline": "2023-03-05",
+    "is_completed": false,
+    "priority": 2,
+    "task_type": 2,
+    "project": 2,
+    "assignees": [
+      3
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 5,
+  "fields": {
+    "name": "Update homepage",
+    "description": "Update the homepage with new content",
+    "deadline": "2023-03-02",
+    "is_completed": false,
+    "priority": 3,
+    "task_type": 2,
+    "project": 2,
+    "assignees": [
+      3,
+      2,
+      8,
+      6
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 6,
+  "fields": {
+    "name": "Test website",
+    "description": "Test the website for any bugs",
+    "deadline": "2023-03-06",
+    "is_completed": false,
+    "priority": 3,
+    "task_type": 2,
+    "project": 2,
+    "assignees": [
+      4,
+      8
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 7,
+  "fields": {
+    "name": "Create product page",
+    "description": "Create a page for displaying products",
+    "deadline": "2023-03-10",
+    "is_completed": false,
+    "priority": 3,
+    "task_type": 3,
+    "project": 3,
+    "assignees": [
+      3,
+      2,
+      8,
+      6
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 8,
+  "fields": {
+    "name": "Add checkout functionality",
+    "description": "Add the ability for users to checkout and purchase products",
+    "deadline": "2023-03-15",
+    "is_completed": false,
+    "priority": 2,
+    "task_type": 3,
+    "project": 3,
+    "assignees": [
+      4,
+      3,
+      8,
+      5
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 9,
+  "fields": {
+    "name": "Update product images",
+    "description": "Update the images of the products on the website",
+    "deadline": "2023-03-10",
+    "is_completed": false,
+    "priority": 4,
+    "task_type": 3,
+    "project": 3,
+    "assignees": [
+      4,
+      2,
+      6
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 10,
+  "fields": {
+    "name": "Create marketing campaign",
+    "description": "Create a marketing campaign to promote the website",
+    "deadline": "2023-03-20",
+    "is_completed": false,
+    "priority": 2,
+    "task_type": 4,
+    "project": 1,
+    "assignees": [
+      3,
+      2,
+      7
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 11,
+  "fields": {
+    "name": "Update social media",
+    "description": "Update the website`s social media accounts with new content",
+    "deadline": "2023-03-25",
+    "is_completed": false,
+    "priority": 4,
+    "task_type": 4,
+    "project": 1,
+    "assignees": [
+      6,
+      5
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 12,
+  "fields": {
+    "name": "Send newsletter",
+    "description": "Send out a newsletter to subscribers with the latest updates",
+    "deadline": "2023-03-30",
+    "is_completed": false,
+    "priority": 3,
+    "task_type": 4,
+    "project": 1,
+    "assignees": [
+      3,
+      6,
+      5
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 13,
+  "fields": {
+    "name": "Create user guide",
+    "description": "Create a user guide for the website",
+    "deadline": "2023-03-15",
+    "is_completed": false,
+    "priority": 3,
+    "task_type": 5,
+    "project": 5,
+    "assignees": [
+      3,
+      7,
+      5
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 14,
+  "fields": {
+    "name": "Create admin panel",
+    "description": "Create an admin panel for managing the website",
+    "deadline": "2023-03-20",
+    "is_completed": false,
+    "priority": 2,
+    "task_type": 5,
+    "project": 5,
+    "assignees": [
+      4,
+      2,
+      6
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 15,
+  "fields": {
+    "name": "Test new feature",
+    "description": "Test the new feature for any bugs or issues",
+    "deadline": "2023-03-25",
+    "is_completed": false,
+    "priority": 3,
+    "task_type": 5,
+    "project": 5,
+    "assignees": [
+      4,
+      3,
+      2,
+      6,
+      5
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 16,
+  "fields": {
+    "name": "Add new payment method",
+    "description": "Add a new payment method for users to checkout with",
+    "deadline": "2023-03-30",
+    "is_completed": false,
+    "priority": 3,
+    "task_type": 3,
+    "project": 3,
+    "assignees": [
+      4,
+      3,
+      2,
+      8
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 17,
+  "fields": {
+    "name": "Create support ticket system",
+    "description": "Create a support ticket system for users to request help",
+    "deadline": "2023-04-01",
+    "is_completed": false,
+    "priority": 2,
+    "task_type": 4,
+    "project": 1,
+    "assignees": [
+      4,
+      3,
+      8,
+      5
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 18,
+  "fields": {
+    "name": "Create blog page",
+    "description": "Create a blog page for the website",
+    "deadline": "2023-04-05",
+    "is_completed": false,
+    "priority": 3,
+    "task_type": 2,
+    "project": 2,
+    "assignees": [
+      4,
+      3,
+      2,
+      7
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 19,
+  "fields": {
+    "name": "Write blog post",
+    "description": "Write a blog post for the website",
+    "deadline": "2023-04-10",
+    "is_completed": false,
+    "priority": 4,
+    "task_type": 2,
+    "project": 2,
+    "assignees": [
+      4,
+      3,
+      7,
+      6,
+      5
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 20,
+  "fields": {
+    "name": "Update pricing page",
+    "description": "Update the pricing page with new information",
+    "deadline": "2023-04-15",
+    "is_completed": false,
+    "priority": 3,
+    "task_type": 3,
+    "project": 3,
+    "assignees": [
+      3,
+      8,
+      5
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 21,
+  "fields": {
+    "name": "Create FAQ page",
+    "description": "Create a frequently asked questions page for the website",
+    "deadline": "2023-04-20",
+    "is_completed": false,
+    "priority": 3,
+    "task_type": 1,
+    "project": 4,
+    "assignees": [
+      3
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 22,
+  "fields": {
+    "name": "Complete the design prototype",
+    "description": "Finish the design prototype for the new mobile app",
+    "deadline": "2022-03-01",
+    "is_completed": true,
+    "priority": 3,
+    "task_type": 1,
+    "project": 1,
+    "assignees": [
+      2,
+      7,
+      6
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 23,
+  "fields": {
+    "name": "Update the website content",
+    "description": "Add new content and images to the website",
+    "deadline": "2022-03-05",
+    "is_completed": true,
+    "priority": 2,
+    "task_type": 2,
+    "project": 2,
+    "assignees": [
+      4,
+      2,
+      7,
+      6,
+      5
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 24,
+  "fields": {
+    "name": "Refactor legacy code",
+    "description": "Clean up and refactor the legacy codebase",
+    "deadline": "2022-03-07",
+    "is_completed": true,
+    "priority": 4,
+    "task_type": 2,
+    "project": 2,
+    "assignees": [
+      4,
+      2
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 25,
+  "fields": {
+    "name": "Write user documentation",
+    "description": "Create user documentation for the new feature",
+    "deadline": "2022-03-08",
+    "is_completed": true,
+    "priority": 3,
+    "task_type": 1,
+    "project": 1,
+    "assignees": [
+      4,
+      3,
+      8,
+      6,
+      5
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 26,
+  "fields": {
+    "name": "Research new technologies",
+    "description": "Explore new technologies to improve the app performance",
+    "deadline": "2022-03-03",
+    "is_completed": true,
+    "priority": 1,
+    "task_type": 3,
+    "project": 3,
+    "assignees": [
+      7,
+      5
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 27,
+  "fields": {
+    "name": "Prepare for the meeting",
+    "description": "Gather all necessary materials and prepare for the upcoming meeting",
+    "deadline": "2022-03-06",
+    "is_completed": true,
+    "priority": 5,
+    "task_type": 5,
+    "project": 5,
+    "assignees": [
+      3,
+      7
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 28,
+  "fields": {
+    "name": "Fix bugs in the app",
+    "description": "Identify and fix bugs in the mobile app",
+    "deadline": "2022-03-04",
+    "is_completed": true,
+    "priority": 3,
+    "task_type": 3,
+    "project": 3,
+    "assignees": []
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 29,
+  "fields": {
+    "name": "Create wireframes for new feature",
+    "description": "Develop wireframes for the new feature",
+    "deadline": "2022-03-02",
+    "is_completed": true,
+    "priority": 2,
+    "task_type": 1,
+    "project": 1,
+    "assignees": [
+      4,
+      2,
+      7
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 30,
+  "fields": {
+    "name": "Write blog post",
+    "description": "Create a blog post for the company website",
+    "deadline": "2022-03-12",
+    "is_completed": true,
+    "priority": 4,
+    "task_type": 4,
+    "project": 4,
+    "assignees": [
+      3,
+      8,
+      7,
+      6
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 31,
+  "fields": {
+    "name": "Meet with stakeholders",
+    "description": "Conduct a meeting with stakeholders to discuss the new project",
+    "deadline": "2022-03-09",
+    "is_completed": true,
+    "priority": 1,
+    "task_type": 5,
+    "project": 5,
+    "assignees": [
+      2,
+      8,
+      7
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 32,
+  "fields": {
+    "name": "Improve app accessibility",
+    "description": "Add new accessibility features to the mobile app",
+    "deadline": "2022-03-14",
+    "is_completed": true,
+    "priority": 2,
+    "task_type": 3,
+    "project": 3,
+    "assignees": [
+      3
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 33,
+  "fields": {
+    "name": "Create social media strategy",
+    "description": "Develop a social media strategy for the new product launch",
+    "deadline": "2022-03-11",
+    "is_completed": true,
+    "priority": 3,
+    "task_type": 4,
+    "project": 4,
+    "assignees": [
+      8,
+      7,
+      6
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 34,
+  "fields": {
+    "name": "Design new logo",
+    "description": "Create a new logo for the company website",
+    "deadline": "2022-03-13",
+    "is_completed": true,
+    "priority": 5,
+    "task_type": 2,
+    "project": 2,
+    "assignees": [
+      4,
+      2,
+      6,
+      5
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 35,
+  "fields": {
+    "name": "Perform security audit",
+    "description": "Conduct a security audit for the company website",
+    "deadline": "2022-03-16",
+    "is_completed": true,
+    "priority": 1,
+    "task_type": 2,
+    "project": 2,
+    "assignees": [
+      4,
+      2,
+      8,
+      7
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 36,
+  "fields": {
+    "name": "Create email campaign",
+    "description": "Develop an email campaign for the new product launch",
+    "deadline": "2022-03-15",
+    "is_completed": true,
+    "priority": 2,
+    "task_type": 4,
+    "project": 4,
+    "assignees": [
+      4,
+      8
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 37,
+  "fields": {
+    "name": "Optimize website speed",
+    "description": "Improve the website loading speed",
+    "deadline": "2022-03-17",
+    "is_completed": true,
+    "priority": 3,
+    "task_type": 2,
+    "project": 2,
+    "assignees": [
+      3,
+      8,
+      7,
+      6
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 38,
+  "fields": {
+    "name": "Create video tutorial",
+    "description": "Develop a video tutorial for the new feature",
+    "deadline": "2022-03-18",
+    "is_completed": true,
+    "priority": 4,
+    "task_type": 1,
+    "project": 1,
+    "assignees": [
+      7,
+      5
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 39,
+  "fields": {
+    "name": "Create newsletter",
+    "description": "Develop a newsletter for the company website",
+    "deadline": "2022-03-20",
+    "is_completed": true,
+    "priority": 5,
+    "task_type": 4,
+    "project": 4,
+    "assignees": [
+      7,
+      5
+    ]
+  }
+}
+]
