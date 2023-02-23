@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="container-fluid py-4">
+
+    <div class="pt-2 d-flex justify-content-between">
+      <a class="btn btn-primary btn-sm me-2 mb-0" href="{% url 'task_manager:task-create' %}">Create</a>
+      <div>
+        <form action="" method="get" >
+          {% if request.GET.project %}
+            <input type="hidden" name="project" value={{ request.GET.project }}>
+          {% endif %}
+          {% if request.GET.worker %}
+            <input type="hidden" name="worker" value={{ request.GET.worker }}>
+          {% endif %}
+          {% if request.GET.completed %}
+            <input type="hidden" name="completed" value={{ request.GET.completed }}>
+          {% endif %}
+
+          <div class="d-flex">
+            <input type="text" class="form-control form-control-sm me-2" placeholder="Type to search..." name="search" value="{{ request.GET.search }}">
+            <div class="input-group-append">
+              <input class="btn btn-sm btn-outline-secondary mb-0" type="submit" value="Search">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-12">
+        <div class="card mb-4">
+          <div class="card-header">
+            <div class=" col-lg-6 col-7">
+              <h5>Tasks</h5>
+            </div>
+          </div>
+          <div class="card-body px-0 pt-0 pb-2">
+            <div class="table-responsive p-0">
+              <table class="table align-items-center mb-0">
+                <thead>
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Project</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Priority</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Deadline</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Completed</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for task in task_list %}
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm"><a href="{{ task.get_absolute_url }}">{{ task.name|truncatechars:80 }}</a></h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-sm font-weight-bold mb-0">{{ task.project.name }}</p>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        {% if task.priority in "1" %}
+                          <span class="text-lg text-danger text-bold" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="{{ task.get_priority_display }}">&#9650</span>
+                        {% elif task.priority in "2" %}
+                          <span class="text-lg text-danger text-bold" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="{{ task.get_priority_display }}">&#9651</span>
+                        {% elif task.priority in "3" %}
+                          <span class="text-lg text-success text-bold" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="{{ task.get_priority_display }}">&#9670</span>
+                        {% elif task.priority in "4" %}
+                          <span class="text-lg text-secondary text-bold" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="{{ task.get_priority_display }}">&#9661</span>
+                        {% elif task.priority in "5" %}
+                          <span class="text-lg text-secondary text-bold" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="{{ task.get_priority_display }}">&#9660</span>
+                        {% else %}
+                          <span class="text-normal text-bold">{{ task.priority }}</span>
+                        {% endif %}
+                      </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-sm font-weight-bold">{{ task.deadline|default_if_none:"" }}</span>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="text-secondary text-lg text-success font-weight-bold">{{ task.is_completed|yesno:"✓,," }}</span>
+                      </td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock content %}
