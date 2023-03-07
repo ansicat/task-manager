@@ -10,13 +10,16 @@ Task manager for resolving potential problems during product development by your
 - Tasks have priority and deadline
 - Filtering tasks by name
 
-## Install using GitHub
+## Installation
 ```
 git clone https://github.com/ansicat/task-manager.git
 cd task-manager
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+```
+Use `.env_sample` as template and create file `.env` with your settings
+```
 python manage.py migrate
 python manage.py runserver
 ```
