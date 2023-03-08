@@ -1,15 +1,14 @@
+from django.contrib.auth import views
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Count, Subquery, OuterRef
 from django.db.models.functions import Coalesce
-from django.contrib.auth import views
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import generic
-from django.shortcuts import render, get_object_or_404, redirect
 
 from task_manager.forms import TaskForm, ProjectForm, WorkerForm
 from task_manager.models import Task, Project, Worker
-
 
 SEGMENT_TASK = "task"
 SEGMENT_PROJECT = "project"

@@ -1,9 +1,7 @@
 from django.test import TestCase
-
 from django.urls import reverse
 
 from task_manager.models import Worker, Position, Task, TaskType, Project
-
 
 INDEX_URL = reverse("task_manager:index")
 TASK_LIST_URL = reverse("task_manager:task-list")

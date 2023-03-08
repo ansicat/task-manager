@@ -1,5 +1,5 @@
 from django.contrib.auth.views import logout_then_login
-from django.urls import path, include
+from django.urls import path
 
 from task_manager import views
 from task_manager.views import (
