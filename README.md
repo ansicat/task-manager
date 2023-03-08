@@ -25,17 +25,6 @@ python manage.py runserver
 ```
 
 ## Getting access
-- create admin user
-    ```
-    python manage.py createsuperuser
-    ```
-- open start page of site: /login/
-
-## Fast review (with test data)
-- load test data
-    ```
-    python manage.py loaddata task_manager_db_data.json
-    ```
 - use credentials for login:
   - user: admin
   - password: asdf7890
