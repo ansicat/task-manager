@@ -20,7 +20,7 @@ pip install -r requirements.txt
 ```
 Use `.env_sample` as template and create file `.env` with your settings
 ```
-python manage.py migrate
+python manage.py init_db
 python manage.py runserver
 ```
 
