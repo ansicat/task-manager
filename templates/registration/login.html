@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/png" href="{{ ASSETS_ROOT }}/img/favicon.png">
+
+  <title>
+    Task manager
+  </title>
+
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+  {% load static %}
+  <link href="{% static 'css/login.css' %}" rel="stylesheet">
+</head>
+
+<body class="text-center">
+  <main class="form-signin w-100 m-auto">
+    <form method="post" novalidate>
+      {% csrf_token %}
+
+      <div>
+          <img class="mb-4" src="{{ ASSETS_ROOT }}/img/logo-ct-dark.png" alt="main_logo" height="50">
+          <h1 class="h3 mb-4 fw-normal">Please sign in</h1>
+      </div>
+
+      <div class="form-floating">
+        <input type="email" class="form-control" id="floatingInput" placeholder="Username" name="username" value="{{ form.cleaned_data.username }}">
+        <label for="floatingInput">Username</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+        <label for="floatingPassword">Password</label>
+      </div>
+
+      {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+      {% endif %}
+
+      <input class="w-100 btn btn-lg btn-primary" type="submit" value="Sign in">
+      <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+  </main>
+</body>
+
+</html>

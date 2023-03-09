@@ -1,0 +1,25 @@
+{% load task_manager %}
+
+{% if is_paginated %}
+  <div class="d-flex justify-content-center">
+    <ul class="pagination">
+      <li>
+        {% if page_obj.has_previous %}
+          <a class="page-link btn text-bold" href="?{% query_transform request page=page_obj.previous_page_number %}">&nbsp&lt&nbsp</a>
+        {% else %}
+          <span class="page-link btn text-secondary text-bold disabled">&nbsp&lt&nbsp</span>
+        {% endif %}
+      </li>
+      <li>
+        <span class="page-link border-0 bg-transparent">{{ page_obj.number }} of {{ paginator.num_pages }}</span>
+      </li>
+      <li>
+        {% if page_obj.has_next %}
+          <a class="page-link btn text-bold" href="?{% query_transform request page=page_obj.next_page_number %}">&nbsp&gt&nbsp</a>
+        {% else %}
+          <span class="page-link btn text-secondary text-bold disabled">&nbsp&gt&nbsp</span>
+        {% endif %}
+      </li>
+    </ul>
+  </div>
+{% endif %}
