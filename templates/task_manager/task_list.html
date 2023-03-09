@@ -41,27 +41,27 @@
               <table class="table align-items-center mb-0">
                 <thead>
                   <tr>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Project</th>
-                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Priority</th>
-                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Deadline</th>
-                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Completed</th>
+                    <th class="col-4 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
+                    <th class="col-4 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Project</th>
+                    <th class="col-1 text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Priority</th>
+                    <th class="col-2 text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Deadline</th>
+                    <th class="col-1 text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Completed</th>
                   </tr>
                 </thead>
                 <tbody>
                   {% for task in task_list %}
                     <tr>
-                      <td>
+                      <td class="col-4 text-wrap">
                         <div class="d-flex px-2 py-1">
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm"><a href="{{ task.get_absolute_url }}">{{ task.name|truncatechars:80 }}</a></h6>
+                            <h6 class="mb-0 text-sm"><a href="{{ task.get_absolute_url }}">{{ task.name }}</a></h6>
                           </div>
                         </div>
                       </td>
-                      <td>
+                      <td class="col-4 text-wrap">
                         <p class="text-sm font-weight-bold mb-0">{{ task.project.name }}</p>
                       </td>
-                      <td class="align-middle text-center text-sm">
+                      <td class="col-1 align-middle text-center text-sm">
                         {% if task.priority in "1" %}
                           <span class="text-lg text-danger text-bold" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="{{ task.get_priority_display }}">&#9650</span>
                         {% elif task.priority in "2" %}
@@ -76,10 +76,10 @@
                           <span class="text-normal text-bold">{{ task.priority }}</span>
                         {% endif %}
                       </td>
-                      <td class="align-middle text-center">
+                      <td class="col-2 align-middle text-center">
                         <span class="text-secondary text-sm font-weight-bold">{{ task.deadline|default_if_none:"" }}</span>
                       </td>
-                      <td class="align-middle text-center text-sm">
+                      <td class="col-1 align-middle text-center text-sm">
                         <span class="text-secondary text-lg text-success font-weight-bold">{{ task.is_completed|yesno:"✓,," }}</span>
                       </td>
                     </tr>

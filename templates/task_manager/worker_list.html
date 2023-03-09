@@ -32,32 +32,32 @@
               <table class="table align-items-center mb-0">
                 <thead>
                   <tr>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
-                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Active tasks</th>
-                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Completed tasks</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Position</th>
+                    <th class="col-4 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
+                    <th class="col-3 text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Active tasks</th>
+                    <th class="col-3 text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Completed tasks</th>
+                    <th class="col-2 text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Position</th>
                   </tr>
                 </thead>
                 <tbody>
                   {% for worker in worker_list %}
                     <tr>
-                      <td class="">
+                      <td class="col-4 text-wrap">
                         <div class="d-flex px-2 py-1">
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm"><a href="{{ worker.get_absolute_url }}">{{ worker.get_full_name|default:worker.username }}</a></h6>
                           </div>
                         </div>
-                      <td class="align-middle text-center">
+                      <td class="col-3 align-middle text-center">
                         {% if worker.active_tasks %}
                           <a class="badge bg-gradient-faded-success" href="{% url 'task_manager:task-list' %}?worker={{ worker.id }}&completed=false">{{ worker.active_tasks }}</a>
                         {% endif %}
                       </td>
-                      <td class="align-middle text-center">
+                      <td class="col-3 align-middle text-center">
                         {% if worker.completed_tasks %}
                           <a class="badge bg-gradient-faded-info" href="{% url 'task_manager:task-list' %}?worker={{ worker.id }}&completed=true">{{ worker.completed_tasks }}</a>
                         {% endif %}
                       </td>
-                      <td>
+                      <td class="col-2 align-middle text-center text-sm">
                         <p class="text-sm font-weight-bold mb-0">{{ worker.position.name }}</p>
                       </td>
                     </tr>
