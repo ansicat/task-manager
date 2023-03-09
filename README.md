@@ -24,7 +24,9 @@ python manage.py init_db
 python manage.py runserver
 ```
 
-## Getting access
-- use credentials for login:
+## Getting access with Render
+Open https://task-manager-t7eg.onrender.com
+
+Use credentials for login:
   - user: admin
   - password: asdf7890
